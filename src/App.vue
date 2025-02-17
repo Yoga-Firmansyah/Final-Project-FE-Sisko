@@ -1,85 +1,95 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
+<script setup></script>
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <div>
+    <router-view />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<style>
+body {
+  font-family: "Roboto", sans-serif;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+button {
+  cursor: pointer;
 }
-
-nav {
+.bg-gradient {
+  background: linear-gradient(to bottom right, #777272, #e6e5e5);
+}
+.transition-colors {
+  transition: background-color 1s ease;
+}
+.hover-border {
+  position: relative;
+  overflow: hidden;
+}
+.hover-border::before,
+.hover-border::after,
+.hover-border span::before,
+.hover-border span::after {
+  content: "";
+  position: absolute;
+  background: black;
+  transition: all 1s ease-in-out;
+}
+.hover-border::before {
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+}
+.hover-border::after {
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+}
+.hover-border span::before {
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+}
+.hover-border span::after {
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+}
+.hover-border:hover::before,
+.hover-border:hover::after {
   width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
 }
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
+.hover-border:hover span::before,
+.hover-border:hover span::after {
+  height: 100%;
 }
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
+/* Custom styles for the border animation */
+.top-border {
+  width: 0;
+  height: 2px; /* Set height for the border */
+  background-color: #000000; /* Border color */
+  transition: width 0.3s ease-in-out;
 }
-
-nav a {
+.dropdown {
+  position: relative;
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
 }
-
-nav a:first-of-type {
-  border: 0;
+.dropdown:hover .top-border {
+  width: 100%;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+.dropdown-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 2s ease-out, opacity 0.5s ease-out;
+}
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  max-height: 500px;
+  transform: translateY(0);
+  pointer-events: auto; /* Allow interaction when visible */
+}
+.slow-hover {
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 </style>

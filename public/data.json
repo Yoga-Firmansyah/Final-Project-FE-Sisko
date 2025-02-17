@@ -1,0 +1,58 @@
+{
+  "new": [
+    {
+      "id": 1,
+      "name": "Sony Headphone",
+      "price": 499000,
+      "image": "/assets/img/asset-image-4.png"
+    },
+    {
+      "id": 2,
+      "name": "Realme TWS Earphone",
+      "price": 279000,
+      "image": "/assets/img/asset-image-5.png"
+    },
+    {
+      "id": 3,
+      "name": "Apple Smartwatch",
+      "price": 6999000,
+      "image": "/assets/img/asset-image-6.png"
+    },
+    {
+      "id": 4,
+      "name": "Apple Vision Pro",
+      "price": 19999000,
+      "image": "/assets/img/asset-image-7.png"
+    }
+  ],
+  "special": [
+    {
+      "id": 1,
+      "name": "MacBook Air M1",
+      "price": 11899000,
+      "discPrice": 9899000,
+      "image": "/assets/img/asset-image-9.png"
+    },
+    {
+      "id": 2,
+      "name": "Sony TWS Earphone",
+      "price": 899000,
+      "discPrice": 599000,
+      "image": "/assets/img/asset-image-10.png"
+    },
+    {
+      "id": 3,
+      "name": "Xiaomi POCO F3 Pro",
+      "price": 7999000,
+      "discPrice": 6399000,
+      "image": "/assets/img/asset-image-11.png"
+    },
+    {
+      "id": 4,
+      "name": "Apple Tablet",
+      "price": 9699000,
+      "discPrice": 8799000,
+      "image": "/assets/img/asset-image-12.png"
+    }
+  ]
+}
